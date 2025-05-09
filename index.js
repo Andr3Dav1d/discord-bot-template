@@ -10,6 +10,8 @@ client.msgCommands = new Discord.Collection();
 client.slashCommands = new Discord.Collection();
 client.config = config;
 
+require('./slashDeploy.js').deploy(client);
+
 const eventsPath = path.join(__dirname, 'src/events')
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
