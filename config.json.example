@@ -1,5 +1,5 @@
 {
-    "devs": [],
+    "devs": ["",""],
     "clientId": "",
     "sendWebhooks": false,
     "webhookURL": ""
