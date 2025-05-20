@@ -2,5 +2,22 @@
   "dependencies": {
     "discord.js": "^14.19.3",
     "dotenv": "^16.5.0"
-  }
+  },
+  "name": "discord-bot-template",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andr3Dav1d/discord-bot-template.git"
+  },
+  "author": "Andr3Dav1d",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andr3Dav1d/discord-bot-template/issues"
+  },
+  "homepage": "https://github.com/Andr3Dav1d/discord-bot-template#readme"
 }
