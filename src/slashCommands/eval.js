@@ -15,7 +15,7 @@ module.exports = {
 			.setName('file')
 			.setDescription('Arquivo (Dentro do Código)')),
 
-	async run(client, interaction) {
+	async run(interaction, client) {
 		if(!client.config.devs.includes(interaction.user.id)) return interaction.reply({ content: `Apenas meus desenvolvedores podem usar esse comando!` });
 
     function clean(text) {
@@ -38,10 +38,10 @@ module.exports = {
        if(evaled.length > 1800) {
 	       
          evaled = `${evaled}`.length > 0 ? `${evaled}`.slice(0, 1800) : 'void';
-        interaction.reply({ content: '```js\n' + evaled + '\n```', files: [attachment], ephemeral: true })
+        interaction.reply({ content: '```js\n' + evaled + '\n```', files: [attachment], flags: Discord.MessageFlags.Ephemeral })
 	    
        } else {
-         interaction.reply({ content: '```js\n' + evaled + '\n```', ephemeral: true })
+         interaction.reply({ content: '```js\n' + evaled + '\n```', flags: Discord.MessageFlags.Ephemeral })
        }
 	},
 };

@@ -22,9 +22,9 @@ for (const file of eventFiles) {
 	const filePath = path.join(eventsPath, file);
 	const event = require(filePath);
 	if (event.once) {
-		client.once(event.name, (...args) => event.run(...args));
+		client.once(event.name, (...args) => event.run(...args, client));
 	} else {
-		client.on(event.name, (...args) => event.run(...args));
+		client.on(event.name, (...args) => event.run(...args, client));
 	}
 }
 
