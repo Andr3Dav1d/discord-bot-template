@@ -1,7 +1,7 @@
-const Discord = require('discord.js')
+const { SlashCommandBuilder, AttachmentBuilder, MessageFlags } = require('discord.js');
 
 module.exports = {
-	data: new Discord.SlashCommandBuilder()
+	data: new SlashCommandBuilder()
 	    .setName('eval')
 		.setDescription('Executa códigos em Javascript')
 		.addStringOption(option => option
@@ -33,15 +33,15 @@ module.exports = {
 	}
        const type = typeof evaled;
        if(type !== 'string') evaled = require('util').inspect(evaled);
-       const attachment = new Discord.AttachmentBuilder(Buffer.from(evaled), { name: 'code.js' })
+       const attachment = new AttachmentBuilder(Buffer.from(evaled), { name: 'code.js' })
        
        if(evaled.length > 1800) {
 	       
          evaled = `${evaled}`.length > 0 ? `${evaled}`.slice(0, 1800) : 'void';
-        interaction.reply({ content: '```js\n' + evaled + '\n```', files: [attachment], flags: Discord.MessageFlags.Ephemeral })
+        interaction.reply({ content: '```js\n' + evaled + '\n```', files: [attachment], flags: MessageFlags.Ephemeral })
 	    
        } else {
-         interaction.reply({ content: '```js\n' + evaled + '\n```', flags: Discord.MessageFlags.Ephemeral })
+         interaction.reply({ content: '```js\n' + evaled + '\n```', flags: MessageFlags.Ephemeral })
        }
 	},
 };

@@ -1,7 +1,7 @@
 const fs = require('fs');
-const Discord = require('discord.js');
+const WebhookClient = require('discord.js');
 const config = require('../config.json');
-const log_hook = config.sendWebhooks ? new Discord.WebhookClient({ url: config.webhookURL }) : null; //Coloque a url do webhook
+const log_hook = config.sendWebhooks ? new WebhookClient({ url: config.webhookURL }) : null; //Coloque a url do webhook
 
 module.exports = class Logger {
   /**
