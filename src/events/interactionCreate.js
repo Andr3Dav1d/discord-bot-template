@@ -10,7 +10,7 @@ module.exports = {
         try {
             await command.run(interaction);
         } catch (error) {
-            console.error(error);
+            client.logging.error(error);
             await interaction.reply({ content: 'Houve um erro ao executar esse comando!', ephemeral: true });
         }
     }
